@@ -13,5 +13,4 @@ class PowerGenerator < ApplicationRecord
     solo
     trapezoidal
   ]
-
 end

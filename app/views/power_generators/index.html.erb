@@ -16,39 +16,13 @@
       </div>
     </div>
 
-    <%= form_tag do %>
+    <%= form_tag '/', method: :get do %>
       <div class="simple-form">
-        <div class="simple-form__input">
-          <input class="form-control form-control-lg" type="text" placeholder="o que procura?">
-        </div>
-        <div class="simple-form__btn">
-          <button type="submit" class="btn btn-outline-primary btn-lg">Pesquisar</button>
-        </div>
+        <%= render 'form', power_generator: PowerGenerator.new %>
       </div>
 
       <div class="advanced-form" style="display:none;">
-        <div class="simple-form__input">
-          <input class="form-control form-control-lg" type="number" placeholder="Altura máxima (metros)">
-          <input class="form-control form-control-lg" type="number" placeholder="Altura mínima (metros)">
-          <input class="form-control form-control-lg" type="number" placeholder="Largura máxima (metros)">
-          <input class="form-control form-control-lg" type="number" placeholder="Largura mínima (metros)">
-        </div>
-        <div class="simple-form__input">
-          <input class="form-control form-control-lg" type="number" placeholder="Comprimento máximo (metros)">
-          <input class="form-control form-control-lg" type="number" placeholder="Comprimento mínimo (metros)">
-          <input class="form-control form-control-lg" type="number" placeholder="Peso máximo (kg)">
-          <input class="form-control form-control-lg" type="number" placeholder="Peso mínimo (kg)">
-        </div>
-        <div class="simple-form__input">
-          <select class="form-control form-control-lg">
-            <% @structure_types.each do |structure| %>
-              <option value=<%=structure%>><%=structure.capitalize%></option>
-            <% end %>
-          </select>
-        </div>
-        <div class="simple-form__btn">
-          <button type="submit" class="btn btn-outline-primary btn-lg">Pesquisar</button>
-        </div>
+        <%= render 'form_advanced', power_generator: PowerGenerator.new %>
       </div>
     <% end %>
   </div>

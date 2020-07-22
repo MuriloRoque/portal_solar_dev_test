@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import "bootstrap/scss/bootstrap";
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -32,7 +35,6 @@ body {
 
 h2 {
   font-size: 22px;
-  
 }
 
 p {
@@ -55,7 +57,6 @@ p.power_generator-card__price {
   justify-content: center;
   align-items: center;
   height: 180px;
-  
 }
 
 .header__title {
@@ -82,7 +83,6 @@ p.power_generator-card__price {
   margin-top: 20px;
   display: flex;
   align-items: center;
-  
 }
 
 .searcher__radio {
@@ -95,22 +95,20 @@ p.power_generator-card__price {
 .simple-form {
   margin-top: 20px;
   margin-bottom: 20px;
+  margin-left: 100px;
   display: flex;
 }
 
-.simple-form__input {
-  width: 200px;
-  margin-left: 100px;
-}
-
-.simple-form__btn {
-  margin-left: -60px;
+.simple-btn {
+  height: 38px;
+  margin-top: 32px;
 }
 
 .advanced-form {
   margin-top: 22px;
   margin-bottom: 20px;
   margin-left: 100px;
+  display: flex;
 }
 
 .power_generators-list {
@@ -141,4 +139,3 @@ p.power_generator-card__price {
 .power_generator-card__button {
   color: #e96443;
 }
-
