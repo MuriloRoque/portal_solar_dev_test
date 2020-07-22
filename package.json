@@ -1,5 +1,5 @@
 {
-  "name": "PortalSolarDevTest",
+  "name": "portal_solar_dev_test",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0-alpha",
