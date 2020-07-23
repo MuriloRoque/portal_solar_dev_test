@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap";
 @import "bootstrap/scss/bootstrap";
 
 body {
@@ -138,4 +137,8 @@ p.power_generator-card__price {
 
 .power_generator-card__button {
   color: #e96443;
+}
+
+.buy-btn {
+  height: 38px;
 }

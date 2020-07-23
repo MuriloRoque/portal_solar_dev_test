@@ -1,0 +1,19 @@
+<%= image_tag @power_generator.image_url, class: 'power_generator-card__img' %>
+<div class="power_generator-card__body">
+  <h2><%= @power_generator.name.upcase %></h2>
+  <p class="power_generator-card__price"><%= number_to_currency(@power_generator.price, unit: "R$ ", precision: 2, :separator => ",", :delimiter => ".") %></p>
+  <p><strong>Descrição: </strong><%= @power_generator.description %></p>
+
+  <%=  simple_form_for :zip_code, url: power_generator_path, method: :get, html: { class: "form_inline" } do |f| %>
+    <%= f.input_field :code, label: "", placeholder: "CEP (00000000)" %>
+    <%= f.submit "Calcular frete", class: "btn btn-primary" %>
+  <% end %>
+  <div>
+    <% @freights.each do |freight| %>
+      <% if (freight.weight_min <= @power_generator.weight) && (freight.weight_max >= @power_generator.weight) %>
+        <p class='power_generator-card__price'><strong>Custo:</strong> R$<%= freight.cost.round(2)%></p>
+        <% break %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

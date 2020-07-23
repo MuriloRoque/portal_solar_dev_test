@@ -30,6 +30,7 @@
   <div class="container" >
     <% @power_generators.each do |power_generator| %>
       <div class="box card power_generator-card">
+      <%= link_to 'Comprar', power_generator_path(power_generator), class: "btn btn-primary buy-btn"%>
         <%= image_tag power_generator.image_url, class: 'power_generator-card__img' %>
         <div class="power_generator-card__body">
           <h2><%= power_generator.name.upcase %></h2>
