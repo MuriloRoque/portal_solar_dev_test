@@ -1,0 +1,5 @@
+<%=  simple_form_for :simple_search, url: root_path, method: :get do |f| %>
+  <%= f.input :query, label: "Faça sua busca:", placeholder: "O que deseja?" %>
+  <%= f.submit "Pesquisar", class: "btn btn-primary simple-btn" %>
+<% end %>
+

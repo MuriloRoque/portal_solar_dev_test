@@ -1,0 +1,12 @@
+<%=  simple_form_for :advanced_search, url: root_path, method: :get do |f| %>
+  <%= f.input_field :query, label: "", placeholder: "O que deseja?" %>
+  <%= f.input :structure, label: "Tipo de estrutura:",
+    collection: @structure_types
+  %>
+  <%= f.input_field :max_lenght, label: "", placeholder: "Comprimento máximo" %>
+  <%= f.input_field :max_width, label: "", placeholder: "Largura máxima" %>
+  <%= f.input_field :max_height, label: "", placeholder: "Altura máxima" %>
+  <%= f.input_field :max_weight, label: "", placeholder: "Peso máximo" %>
+  <%= f.input_field :min_kwp, label: "", placeholder: "KWP mínimo" %>
+  <%= f.submit "Pesquisar", class: "btn btn-primary" %>
+<% end %>
