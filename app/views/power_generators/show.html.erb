@@ -12,7 +12,6 @@
     <% @freights.each do |freight| %>
       <% if (freight.weight_min <= @power_generator.weight) && (freight.weight_max >= @power_generator.weight) %>
         <p class='power_generator-card__price'><strong>Custo:</strong> R$<%= freight.cost.round(2)%></p>
-        <% break %>
       <% end %>
     <% end %>
   </div>

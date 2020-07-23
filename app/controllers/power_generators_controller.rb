@@ -5,12 +5,18 @@ class PowerGeneratorsController < ApplicationController
     @power_generators = PowerGenerator.all
     @simple = params['simple_search']
     @advanced = params['advanced_search']
+    @price_filter = params[:price_filter]
+    @kwp_filter = params[:kwp_filter]
     @structure_types = PowerGenerator.structure_types.keys
 
     if @simple
       simple_search
     elsif @advanced
       advanced_search
+    elsif @price_filter
+      price_fun
+    elsif @kwp_filter
+      kwp_fun
     end
   end
 
@@ -30,6 +36,16 @@ class PowerGeneratorsController < ApplicationController
   end
 
   private
+
+  def price_fun
+    @power_generators = PowerGenerator.price_filter
+    @price_filter = false
+  end
+
+  def kwp_fun
+    @power_generators = PowerGenerator.kwp_filter
+    @kwp_filter = false
+  end
 
   def simple_search
     @query = @simple[:query].split(' ')

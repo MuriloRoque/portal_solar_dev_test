@@ -13,4 +13,8 @@ class PowerGenerator < ApplicationRecord
     solo
     trapezoidal
   ]
+
+  scope :name_filter, -> { order(name: :asc) }
+  scope :price_filter, -> { order(price: :asc).name_filter }
+  scope :kwp_filter, -> { order(kwp: :desc).name_filter }
 end

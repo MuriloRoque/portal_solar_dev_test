@@ -3,6 +3,4 @@ Rails.application.routes.draw do
   resources :home, only: %i[index]
 
   resources :power_generators, only: %i[show]
-
-  get '/test', to: 'power_generators#test'
 end

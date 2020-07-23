@@ -27,6 +27,11 @@
     <% end %>
   </div>
 
+  <div>
+    <%= link_to 'Filtrar por preço', root_path(price_filter: true) %>
+    <%= link_to 'Filtrar por kwp', root_path(kwp_filter: true) %>
+  </div>
+
   <div class="container" >
     <% @power_generators.each do |power_generator| %>
       <div class="box card power_generator-card">
